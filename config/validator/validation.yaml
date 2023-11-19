@@ -1,0 +1,71 @@
+App\Entity\Location:
+  properties:
+    city:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Length:
+          min: 3
+          max: 255
+          groups: ['create', 'edit']
+    country:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Length:
+          min: 2
+          max: 2
+          groups: ['create', 'edit']
+    latitude:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Length:
+          min: 3
+          max: 10
+          groups: ['create', 'edit']
+    longitude:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Length:
+          min: 3
+          max: 10
+          groups: ['create', 'edit']
+App\Entity\Forecast:
+  properties:
+    time:
+      - NotBlank:
+          groups: ['create', 'edit']
+    temperature:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Range:
+          min: -20
+          max: 40
+          groups: ['create', 'edit']
+    wind_direction:
+      - NotBlank:
+          groups: ['create', 'edit']
+    wind_speed:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Range:
+          min: 0
+          max: 300.00
+      - Length:
+          min: 1
+          max: 5
+    rain:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Range:
+          min: 0
+          max: 10000.00
+      - Length:
+          min: 1
+          max: 7
+    description:
+      - NotBlank:
+          groups: ['create', 'edit']
+      - Length:
+          min: 4
+          max: 255
+          groups: ['create', 'edit']
+
